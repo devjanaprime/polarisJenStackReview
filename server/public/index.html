@@ -11,14 +11,21 @@
 <body>
     <h1>Polaris JEN Stack Review</h1>
     <section id='input'>
-        <h2>New Message</h2>
-        <input type="text" id="messageIn" placeholder="message body">
-        <input type="text" id="nameIn" placeholder="who r u?">
-        <button id="sendButton">Send Message</button>
+        <div id="login">
+            <h2>login?</h2>
+            <input type="text" id="nameIn" placeholder="who r u?">
+            <button id="loginButton">Log In</button>
+        </div>
+        <div id="newMessage">
+            <h2>New Message</h2>
+            <p id="welcome"></p>
+            <input type="text" id="messageIn" placeholder="message body">
+            <button id="sendButton">Send Message</button>
+        </div>
     </section>
     <section id='output'>
         <ul id='messagesOut'></ul>
-        <button id='refreshButton'>Refresh</button>
+        <button id='refreshButton'>Refresh</button><button id='logoutButton'>Log Out</button>
     </section>
 </body>
 </html>
