@@ -5,10 +5,19 @@ function newMessage(){
     // get user input & assemble into an object
     let objectToSend = {
         from: $( '#nameIn' ).val(),
-        body: $( '#messageIn' ).val()
+        message: $( '#messageIn' ).val()
     } // end objectToSend
     console.log( 'sending:', objectToSend );
     // send to server via POST
+    $.ajax({
+        method: 'POST',
+        url: '/messages',
+        data: objectToSend
+    }).then( function( response ){
+        console.log( 'back from POST with:', response );
+    }).catch( function( error ){
+        alert( 'problem!' );
+    }) // end ajax
 } // end newMessage
 
 function readyNow(){
@@ -30,7 +39,7 @@ function refreshPage(){
         for( message of response ){
             // display each on DOM
             let outputString = '<li>"'; 
-            outputString += message.body; 
+            outputString += message.message; 
             outputString += '": '; 
             outputString += '<em>' + message.from + '</em>'; 
             outputString += '</li>'; 
